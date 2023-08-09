@@ -9,33 +9,22 @@ namespace StackExample
     {
         static void Main(string[] args)
         {
-            Stack astack = new Stack();
+            Queue aqueue = new Queue();
+            
+            // Adding element to the queue
+            aqueue.Enqueue(1);
+            aqueue.Enqueue(2);
 
+            // Return top elemnt without removing - First in first out principle
+            Console.WriteLine(aqueue.Peek());
 
-            Stack<int> bstack = new Stack<int>();
-            // Inner elements can be predefined, in this case we cannot push string or float to bstack
+            // Remove and return top element in the queue
+            aqueue.Dequeue();
 
-            // Adding elements
-            astack.Push(1);
-            astack.Push(2);
-            astack.Push(3.0);
-            astack.Push("Hello");
-
-            //Droping the element on top of box
-            //astack.Pop();
-
-            foreach (var data in astack)
+            foreach (var item in aqueue)
             {
-                Console.WriteLine(data);
-                // Output is in sequence of Hello, 3, 2, 1 => Last in First Out
-                // Like dropping marbels in a square box
+                Console.WriteLine(item);   
             }
-
-            //Return the top element of stack without dropping it  
-            astack.Peek();
-
-
-
         }
 
     }
